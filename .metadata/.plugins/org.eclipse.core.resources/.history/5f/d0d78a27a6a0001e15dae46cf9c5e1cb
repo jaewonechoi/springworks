@@ -1,0 +1,8 @@
+package com.kh.model;
+
+
+public class UserDTO {
+	//ÇÊµå
+	private String name;
+	private int age;
+}
