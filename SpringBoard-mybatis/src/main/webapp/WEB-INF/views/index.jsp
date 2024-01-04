@@ -4,10 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KHIT 홈</title>
+<title>Khit 홈</title>
+<link rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>
-	<h1>KHIT 홈입니다.</h1>
-	<h3><a href="/user/join">회원가입</a></h3>
+	<jsp:include page="layout/header.jsp" />
+	<div id="container">
+		<section id="main">
+			<h1>Khit 홈입니다.</h1>
+			<div class="main_img">
+				<img src="/resources/images/bear.jpg" alt="곰인형">
+			</div>
+		</section>
+	</div>
+	<jsp:include page="layout/footer.jsp" />
 </body>
 </html>
