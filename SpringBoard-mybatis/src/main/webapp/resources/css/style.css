@@ -205,7 +205,10 @@ table thead{
 .pagenation a{
 	margin: 5px;
 }
-
+.current_page{
+	font-weight: bold;
+	color: #boo;
+}
 /* 글쓰기 스타일 */
 #writeform{
 	width: 550px;

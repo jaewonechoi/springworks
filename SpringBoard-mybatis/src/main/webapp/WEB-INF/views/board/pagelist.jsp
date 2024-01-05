@@ -57,7 +57,14 @@
 				</c:choose>
 			<!-- 현재 페이지 -->
 				<c:forEach var="i" begin="${paging.startPage}" end="${paging.endPage}">
-					<a href="/board/paging?page=${i}">${i}</a>
+					<c:choose>
+						<c:when test="${paging.page eq i}">
+							<span class="current_page">${i}</span>
+						</c:when>
+						<c:otherwise>
+							<a href="/board/paging?page=${i}">${i}</a>
+						</c:otherwise>
+					</c:choose>
 				</c:forEach>
 				<!-- 다음 페이지 -->
 				<c:choose>
