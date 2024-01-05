@@ -29,9 +29,11 @@
 						<td>${user.userName}</td>
 						<td>${user.userAge}</td>
 						<td>
-							<a href="/user/delete?id=${user.id}">
-								<button>삭제</button>
-							</a>
+							<%-- <c:if test="${sessionId eq user.userId}"> --%>
+								<a href="/user/delete?id=${user.id}" onclick="return confirm('정말로 삭제하시겠습니까?')">
+									<button>삭제</button>
+								</a>
+							<%-- </c:if> --%>
 						</td>
 					</tr>	
 				</c:forEach>

@@ -108,8 +108,9 @@ public class UserController {
 	}
 	
 	@PostMapping("/checkuserid")
-	public @ResponseBody String userCheckUserId(@RequestParam("userId") String userId) {
+	public @ResponseBody String CheckUserId(@RequestParam("userId") String userId) {
 		log.info(userId);
-		return null;
+		String checkResult = userService.checkUserId(userId);
+		return checkResult;	//"usable" or "not_usable" ∏Æ≈œ
 	}
 }	
