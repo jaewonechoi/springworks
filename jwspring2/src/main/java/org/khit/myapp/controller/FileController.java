@@ -33,14 +33,17 @@ public class FileController {
 		log.info(fileType);
 		
 		//서버에 저장
-		String filepath = "C:\\springworks\\jwspring2\\src\\main\\webapp\\upload";
-		String savedFilename = filename.getOriginalFilename();
-		//중복 파일 이름을 방지하는 고유 ID 객체 생성
-		UUID uuid = UUID.randomUUID();
-		savedFilename = uuid.toString() + "_" + savedFilename;
-		
-		File file = new File(filepath + "\\" + savedFilename);
-		filename.transferTo(file);	//서버 폴더에 저장
+		String savedFilename = "";
+		if(!filename.isEmpty()) {
+			String filepath = "C:\\springworks\\jwspring2\\src\\main\\webapp\\upload";
+			savedFilename = filename.getOriginalFilename();
+			//중복 파일 이름을 방지하는 고유 ID 객체 생성
+			UUID uuid = UUID.randomUUID();
+			savedFilename = uuid.toString() + "_" + savedFilename;
+			
+			File file = new File(filepath + "\\" + savedFilename);
+			filename.transferTo(file);	//서버 폴더에 저장
+		}
 		model.addAttribute("filename", savedFilename);
 		return "/file/uploadform";
 	}

@@ -68,8 +68,20 @@
 				<div class="reply">
 					<p>${reply.replyContent}</p>
 					<p>
-						작성자: ${reply.replyer} (작성일: <fmt:formatDate value="${reply.createdTime}" 
-						pattern="yyyy-MM-dd HH:mm:ss"/>)
+						작성자: ${reply.replyer}
+						<c:choose>
+							<c:when test="${empty reply.updatedTime}">
+								작성일 : <fmt:formatDate value="${reply.createdTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
+							</c:when>
+							<c:otherwise>
+								수정일 : <fmt:formatDate value="${reply.updatedTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
+							</c:otherwise>
+						</c:choose>
+					</p>
+					<p>
+						<a href="/reply/update?boardId=${board.id}&id=${reply.id}">수정</a> | 
+						<a href="/reply/delete?boardId=${board.id}&id=${reply.id}"
+							onclick="return confirm('정말로 삭제하시겠습니까?')">삭제</a>
 					</p>
 				</div>
 			</c:forEach>
