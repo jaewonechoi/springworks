@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="Member">
+	<insert id="insert">
+		insert into t_member(email, password, name, age)
+		values (#{email}, #{password}, #{name}, #{age})
+	</insert>
+	
+	<select id="login" resultType="member">
+		select * from t_member where email= #{email} and password= #{password}
+	</select>
+	
+	<select id="findByEmail" resultType="member">
+		select * from t_member where email= #{email}
+	</select>
+	
+	<update id="update">
+		update t_member set password= #{password}, name= #{name} where email= #{email}
+	</update>
+	
+	<select id="findAll" resultType="member">
+		select * from t_member
+	</select>
+	
+	<select id="findById" resultType="member">
+		select * from t_member where id = #{id}
+	</select>
+	
+	<delete id="delete">
+		delete from t_member where id = #{id}
+	</delete>
+</mapper>

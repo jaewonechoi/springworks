@@ -5,4 +5,5 @@
   <module moduleId="org.eclipse.jst.jee.server:SpringBoard-jdbc" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:jwspring" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:jwspring2" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:members" serverId="Tomcat v9.0 Server at localhost"/>
 </modules>
