@@ -39,4 +39,10 @@
 		<item key="INCLUDE_MASK" value="15"/>
 		<item key="HISTORY_SIZE" value="0"/>
 	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item key="renameSubpackages" value="false"/>
+		<item key="updateTextualMatches" value="false"/>
+		<item key="updateQualifiedNames" value="false"/>
+		<item key="patterns" value="*"/>
+	</section>
 </section>

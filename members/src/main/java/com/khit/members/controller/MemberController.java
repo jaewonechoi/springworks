@@ -73,13 +73,13 @@ public class MemberController {
 		return "/member/list";
 	}
 	
-	/*@GetMapping("/detail")
+	@GetMapping("/detail")
 	public String memberView(HttpSession session, Model model) {
 		String sessionEmail = (String)session.getAttribute("sessionEmail");
 		MemberDTO memberDTO = memberService.findByEmail(sessionEmail);
 		model.addAttribute("member", memberDTO);
 		return "/member/detail";
-	}*/
+	}
 	
 	//회원 정보
 	@GetMapping
